@@ -1,3 +1,5 @@
+import type { UserInfo } from '../types';
+
 const TOKEN_KEY = 'knowflow_token';
 const USER_KEY = 'knowflow_user';
 const AUTH_EVENT = 'knowflow-auth-change';
@@ -14,7 +16,7 @@ export const storage = {
     localStorage.removeItem(TOKEN_KEY);
     window.dispatchEvent(new Event(AUTH_EVENT));
   },
-  getUser() {
+  getUser(): UserInfo | null {
     const raw = localStorage.getItem(USER_KEY);
     return raw ? JSON.parse(raw) : null;
   },

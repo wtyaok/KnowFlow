@@ -8,7 +8,7 @@ const C = {
   tech: '\u6280\u672f',
   ops: '\u8fd0\u8425',
   product: '\u4ea7\u54c1'
-};
+} as const;
 
 export const mockUserList: Record<string, { password: string; user: UserInfo }> = {
   admin: {
